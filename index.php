@@ -20,18 +20,12 @@
     
     <title>مسار المفتاح الهندسي | رواد حلول النقل العمودي في العراق</title>
     
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
-    <link rel="manifest" href="assets/site.webmanifest">
-    
+
     <!-- Preload Critical Resources -->
     <link rel="preload" href="https://cdn.tailwindcss.com" as="script">
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" as="style">
-    <link rel="preload" href="assets/images/logo.webp" as="image" type="image/webp">
+    <link rel="preload" href="assets/img/logo.png" as="image" type="image/webp">
     <link rel="preload" href="assets/images/background.webp" as="image" type="image/webp">
     
     <!-- DNS Prefetch -->
@@ -60,7 +54,7 @@
                         
                         <div class="logo1">
                             <img 
-                                src="Log1o.png" 
+                                src="assets/img/Logo.png"
                                 alt="شعار شركة مسار المفتاح الهندسي" 
                                 
                                 class="  transition-all duration-300 logo-img"
@@ -1023,7 +1017,7 @@
             <!-- Logo and About -->
             <div class="col-span-1 md:col-span-3 lg:col-span-1">
                 <a href="#home" class="flex items-center space-x-3 rtl:space-x-reverse mb-6" aria-label="الرئيسية - شركة مسار المفتاح الهندسي">
-                    <img src="Log1o.png" alt="شعار الشركة أبيض" class="w-16 h-16 object-contain" loading="lazy">
+                    <img src="assets/img/Logo.png" alt="شعار الشركة أبيض" class="w-16 h-16 object-contain" loading="lazy">
                     <span class="text-3xl font-extrabold text-white leading-tight">مسار المفتاح الهندسي</span>
                 </a>
                 <p class="text-gray-400 text-lg leading-relaxed mb-6">
