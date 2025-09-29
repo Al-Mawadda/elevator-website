@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>مسار المفتاح - صفحة المنتج</title>
+
+  <!-- Tailwind (CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- أيقونات (اختياري) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+  <style>
+    /* المؤشر القصير المتحرك */
+    .tab-indicator {
+      position: absolute;
+      bottom: 0;
+      height: 6px;
+      background: #0ea5e9; /* أزرق */
+      border-radius: 9999px;
+      transition: left 280ms cubic-bezier(.22,.9,.3,1), width 280ms cubic-bezier(.22,.9,.3,1), opacity 200ms;
+      will-change: left, width;
+      opacity: 1;
+    }
+
+    /* أنيميشن fade للمحتوى */
+    .fade-in {
+      animation: fadeIn 320ms ease both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* أنيميشن fade للنصوص التفصيلية */
+    .detail-fade {
+      animation: detailFade 360ms ease both;
+    }
+    @keyframes detailFade {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* تعطيل زر بشكل واضح */
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <main class="max-w-6xl mx-auto px-4 py-10">
+
+    <!-- عنوان -->
+    <header class="mb-8 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold text-blue-900">مصعد الركاب من سلسلة UN-Victor</h1>
+    </header>
+
+    <!-- ====== تبويبات السكشن الأول ====== -->
+    <section class="mb-12">
+      <div id="tabs1" class="relative flex justify-center gap-8 border-b border-gray-200 pb-3" role="tablist" aria-label="تبويبات المنتج">
+        <button class="tab1-btn tab-btn text-blue-900 font-semibold pb-2" data-tab="1" role="tab" aria-selected="false">المصعد</button>
+        <button class="tab1-btn tab-btn text-gray-500 font-semibold pb-2" data-tab="2" role="tab" aria-selected="false">المواصفات</button>
+
+        <!-- مؤشر قصير (يتحرك) -->
+        <span id="indicator" class="absolute bottom-0 h-[3px] bg-blue-600 transition-all duration-300 ease-in-out"></span>
+
+      </div>
+
+      <!-- محتويات -->
+      <div class="mt-6 space-y-6">
+        <div class="tab1-panel fade-in" data-tab="1" role="tabpanel">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <img src="assets/images/elevator.jpg" alt="مصعد بانورامي" class="w-full rounded-2xl shadow-lg object-cover">
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+              <h2 class="text-2xl font-bold text-blue-800 mb-3">نبذة عن المصعد</h2>
+              <p class="text-gray-700 leading-relaxed">
+                مصعد بانورامي بتصميم فاخر يعكس الفخامة والرقي، مناسب للمباني التجارية والسكنية الحديثة.
+                يوفر راحة للركاب ونظام تحكم متطور.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab1-panel hidden" data-tab="2" role="tabpanel">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <img src="assets/images/specs.jpg" alt="مواصفات" class="w-full rounded-2xl shadow-lg object-cover">
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+              <h2 class="text-2xl font-bold text-blue-800 mb-3">المواصفات العامة</h2>
+              <ul class="list-disc list-inside text-gray-700 space-y-1">
+                <li>الحمولة: 800 كجم (10 أشخاص تقريباً)</li>
+                <li>السرعة: 1.0 - 1.75 م/ث (قابل للاختيار)</li>
+                <li>الشهادة: ISO 9001 / CE</li>
+                <li>نظام الطوارئ: بطارية احتياطية + إنذار</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== تبويبات السكشن الثاني (التفاصيل التقنية) ====== -->
+    <section>
+      <div id="tabs2" class="relative flex justify-center gap-8 border-b border-gray-200 pb-3" role="tablist" aria-label="تبويبات التفاصيل">
+        <button class="tab2-btn tab-btn text-blue-900 font-semibold pb-2" data-tab="1" role="tab" aria-selected="false">المحرك</button>
+        <button class="tab2-btn tab-btn text-gray-500 font-semibold pb-2" data-tab="2" role="tab" aria-selected="false">العتلات</button>
+        <button class="tab2-btn tab-btn text-gray-500 font-semibold pb-2" data-tab="3" role="tab" aria-selected="false">التفاصيل</button>
+
+        <!-- مؤشر ثاني -->
+        <span id="indicator2" class="tab-indicator" aria-hidden="true" style="width:40px; left:0;"></span>
+      </div>
+
+      <!-- محتويات -->
+      <div class="mt-6 space-y-6">
+        <div class="tab2-panel fade-in" data-tab="1" role="tabpanel">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <img src="assets/images/motor.jpg" alt="محرك" class="w-full rounded-2xl shadow-lg object-cover">
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+              <h2 class="text-2xl font-bold text-blue-800 mb-3">المحرك</h2>
+              <p class="text-gray-700 mb-3">محرك عالي الكفاءة بتقنية حديثة لتوفير الطاقة وضمان أداء مستقر.</p>
+              <ul class="space-y-1 text-gray-700">
+                <li>القدرة: 15 كيلوواط</li>
+                <li>نظام التبريد: مائي + هوائي</li>
+                <li>العمر الافتراضي: ~15 سنة</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab2-panel hidden" data-tab="2" role="tabpanel">
+          <div class="grid md:grid-cols-2 gap-8 items-center">
+            <img src="assets/images/ropes.jpg" alt="عتلات" class="w-full rounded-2xl shadow-lg object-cover">
+            <div class="bg-white p-6 rounded-2xl shadow-md">
+              <h2 class="text-2xl font-bold text-blue-800 mb-3">العتلات</h2>
+              <p class="text-gray-700 mb-3">عتلات قوية مصنوعة من فولاذ معالج حراريًا لضمان قوة وثبات الحركة.</p>
+              <ul class="space-y-1 text-gray-700">
+                <li>مقاومة شد عالية</li>
+                <li>مستوى ضوضاء منخفض</li>
+                <li>صيانة بسيطة ودورية</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- تبويب 3: التفاصيل مع شرائح نصية + أزرار السابق/التالي -->
+        <div class="tab2-panel hidden" data-tab="3" role="tabpanel">
+          <div class="grid md:grid-cols-2 gap-8 items-start">
+            <img src="assets/images/details.jpg" alt="تفاصيل" class="w-full rounded-2xl shadow-lg object-cover">
+
+            <div class="bg-white p-6 rounded-2xl shadow-md flex flex-col">
+              <h2 class="text-2xl font-bold text-blue-800 mb-3">التفاصيل الكاملة</h2>
+
+              <!-- حاوية الشرائح -->
+              <div id="detailSlides" class="relative min-h-[160px]">
+                <!-- شريحة 0 -->
+                <article class="detail-slide absolute inset-0 detail-fade" data-index="0">
+                  <p class="text-gray-700 mb-3">مصمم ليناسب أعلى معايير الأمان والفخامة. مجهز بأنظمة الطوارئ الحديثة ومطابق لمعايير الجودة العالمية.</p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li>نظام الطوارئ: كهربائي + يدوي</li>
+                    <li>مستوى الضوضاء: منخفض جداً</li>
+                    <li>الشهادة: ISO 9001 / CE</li>
+                  </ul>
+                </article>
+
+                <!-- شريحة 1 -->
+                <article class="detail-slide absolute inset-0 hidden" data-index="1">
+                  <p class="text-gray-700 mb-3">المواد والتشطيب: خامات عالية الجودة مع تصميم داخلي أنيق ومقاوم للاهتراء.</p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li>أبواب أوتوماتيكية سلسة</li>
+                    <li>إضاءة LED داخلية موفرة للطاقة</li>
+                    <li>شاشة رقمية لعرض الطوابق</li>
+                  </ul>
+                </article>
+
+                <!-- شريحة 2 -->
+                <article class="detail-slide absolute inset-0 hidden" data-index="2">
+                  <p class="text-gray-700 mb-3">الأمان والصيانة: مزود بحساسات متطورة ونظام إنذار ذكي وإمكانية دعم الصيانة عن بعد.</p>
+                  <ul class="space-y-1 text-gray-700">
+                    <li>حساسات أمان متقدمة</li>
+                    <li>نظام إنذار مركزي</li>
+                    <li>دعم صيانة عن بعد (اختياري)</li>
+                  </ul>
+                </article>
+              </div>
+
+              <!-- أزرار التنقل والنص التعريفي -->
+              <div class="mt-4 flex items-center justify-between">
+                <button id="detailPrev" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"> السابق</button>
+                <div class="text-sm text-gray-600">جزء <span id="detailIndex">1</span> من <span id="detailTotal">3</span></div>
+                <button id="detailNext" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">التالي </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="../assets/js/java.js"></script>
+</body>
+</html>
